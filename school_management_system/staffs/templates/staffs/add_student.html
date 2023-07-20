@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} welcome: {% endblock  %}
+
+
+{% csrf_token %} 
+
+{% block content %}
+
+    <h1 class="text-center my-3">Add New Students</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %} 
+                            <div class="mb-1">
+                                <label for="roll">Roll Number</label>
+                                <input type="text" id="roll" class="form-control" placeholder="Enter roll number" name="roll" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter the name" name="name" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="std">Standard</label>
+                                <input type="text" id="std" class="form-control" placeholder="Enter the class" name="std" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="mobile">mobile</label>
+                                <input type="text" id="mobile" class="form-control" placeholder="Enter Mobile Number" name="mobile">
+                            </div>
+                            <div class="mb-1">
+                                <label for="email">E-mail</label>
+                                <input type="text" id="email" class="form-control" placeholder="Enter E-mail id" name="email">
+                            </div>
+                            <div class="mb-1">
+                                <label for="uname">Username</label>
+                                <input type="text" id="uname" class="form-control" placeholder="Enter username" name="uname">
+                            </div>
+                            <div class="mb-1">
+                                <label for="pass1">Password</label>
+                                <input type="text" id="pass1"  class="form-control" placeholder="Enter Password" name="pass1">
+                            </div>
+
+                            <div class="container text-center">
+                                <button class="btn btn-primary">
+                                    Add Student
+                                </button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    
+    
+   
+{% endblock %}    
+</body>
+</html>

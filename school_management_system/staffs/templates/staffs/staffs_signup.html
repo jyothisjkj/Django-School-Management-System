@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Staff's signup {% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href=" {% static "staffs/staffs_signup.css"%}">
+{% endblock %}
+
+{% block content %}
+
+
+<form class="signup_form"  method="post">
+    {% csrf_token %} 
+    <h3>Signup Here</h3>
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username" name="username" id="username" required>
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Email or Phone" name="email" id="email" required> 
+
+    <label for="password1">Password</label>
+    <input type="password" placeholder="Password" id="password1" name="password1" required>
+
+
+    <label for="password2">Confrom Password</label>
+    <input type="password" placeholder="Confrom Password" id="password2" name="password2" required>
+    <button type="submit">Signup</button>
+    
+    <a href="{% url 'staff-login' %}" >i already have an account</a>
+</form>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

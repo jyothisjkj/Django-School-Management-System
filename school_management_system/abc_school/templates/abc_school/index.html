@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock title %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "abc_school/index.css"%}">
+{% endblock css_files %}
+
+
+{% block content %}
+
+    
+
+    {% comment %}  for the image socond section of the site. {% endcomment %}
+
+
+    <div class="container-flid justify-content-center align-items-center  ">
+      <div class="row ">
+        <div class="col-md-6" id="bg_image1">
+          <div class="container " id="container_1_2">
+            <h2>welcome to</h2>
+            <h2>Best education </h2>
+            <H1 style="color: yellow;">SCHOOL</H1>
+            <p style="font-size:14px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto 
+              autem modi voluptate optio corporis aspernatur molestias magni animi quibusdam minima 
+            </p>
+            <button type="button" class="btn btn-light">Join Us</button>
+          </div>
+          
+          
+        </div>
+        <div class="col-md-6" id="bg_image2">
+          <img src="{% static "abc_school/images/hero.png" %}" alt="something went wrong!">
+
+        </div>
+      </div>
+
+
+    </div>
+
+{% endblock content %}

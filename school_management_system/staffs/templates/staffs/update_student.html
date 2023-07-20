@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} update {% endblock  %}
+
+
+{% csrf_token %} 
+
+{% block content %}
+
+    <h1 class="text-center my-3">Update Student</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %} 
+                            <div class="mb-1">
+                                <label for="roll">Roll Number</label>
+                                <input type="text" id="roll" value="{{ std_details.roll_number }}" class="form-control" placeholder="Enter roll number" name="roll" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" value="{{ std_details.name}}" class="form-control" placeholder="Enter the name" name="name" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="std">Standard</label>
+                                <input type="text" id="std" value="{{ std_details.standard}}" class="form-control" placeholder="Enter the class" name="std" required>
+                            </div>
+                            <div class="mb-1">
+                                <label for="mobile">mobile</label>
+                                <input type="text" id="mobile" value="{{ std_details.mobile}}" class="form-control" placeholder="Enter Mobile Number" name="mobile">
+                            </div>
+                            <div class="mb-1">
+                                <label for="email">E-mail</label>
+                                <input type="text" id="email" value="{{ std_details.email}}" class="form-control" placeholder="Enter E-mail id" name="email">
+                            </div>
+                            <div class="mb-1">
+                                <label for="uname">Username</label>
+                                <input type="text" id="uname" value="{{ std_details.username}}" class="form-control" placeholder="Enter username" name="uname">
+                            </div>
+                            <div class="mb-1">
+                                <label for="pass1">Password</label>
+                                <input type="text" id="pass1" value="{{ std_details.password}}" class="form-control" placeholder="Enter Password" name="pass1">
+                            </div>
+
+                            <div class="container text-center">
+                                <button class="btn btn-primary">
+                                    Update Student
+                                </button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    
+    
+   
+{% endblock %}    
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Students{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'students/students_login.css' %} ">
+{% endblock  %}
+
+{% block content  %}
+
+{% comment %} <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>  {% endcomment %}
+<form  class= "form_class" method="post">
+    <h3>Student Login</h3>
+    {% comment %} {% csrf_token %}  {% endcomment %}
+    <label for="username">Username</label>
+    <input type="text" placeholder="Enter Username" id="username" name="username">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="password" name="pass">
+
+    <button type="submit">Log In</button>
+    <!-- <input type="button" value=""> -->
+    <!-- <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div> -->
+    <a href="" >Forgot password</a>
+    
+</form>
+
+
+
+
+{% endblock  %}
