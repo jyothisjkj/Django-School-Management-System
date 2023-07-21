@@ -5,20 +5,24 @@
 {% block title %} welcome: {% endblock  %}
 
 
+
 {% csrf_token %} 
 
 {% block content %}
 
     
-    <h1 class="text-center">Student List</h1>
+    <h1 class="text-center mt-3">Student List</h1>
     
     <div class="container text-end my-3">
         <a href="{% url 'logout-section' %}" class="btn btn-dark btn-sm">Log out</a>
     </div>
 
     {% comment %} DROP DOWN SECTIONS {% endcomment %}
-    <form action="" method="POST">
+    <form action="{% url 'staff-loginpage' %}" method="POST" >
     {% csrf_token %}
+        <!-- Hidden field to identify the first form -->
+        <input type="hidden" name="form_type1" value="form1">
+
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -53,7 +57,7 @@
         <div class="row">
             <div class="col-md-10 offset-1">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="max-height:400px; overflow:scroll;" >
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -64,11 +68,11 @@
                                     <th>E-mail</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody >
                                 {% for s in all_students %}
                                 <tr>
                                     <td>{{s.roll_number}}</td>
-                                    <td><a href="">{{s.name}}</a></td>
+                                    <td><a href=" {% url 'student-details' s.roll_number s.name %}">{{s.name}}</a></td>
                                     <td>{{s.standard}}</td>
                                     <td>{{s.mobile}}</td>
                                     <td>{{s.email}}</td>
@@ -90,6 +94,33 @@
         <a  href="{% url 'add-student'%}" class="btn btn-dark">Add Student</a>
     </div>
 
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <div class="card shadow p-3 mb-5 bg-body rounded">
+                    <div class="card-body">
+                        <form action="{% url 'message-students' %}" method="POST">
+                            {% csrf_token %} 
+
+                            
+                                <div class="mb-3">
+                                    <label for="title" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="assignment subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-primary">Send Message</button>
+                                </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
